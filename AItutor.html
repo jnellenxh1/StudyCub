@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ID_StudyCub_IP</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body class="homepage-page">
+    <!--Header Section-->
     <!--Header Section-->
     <header>
         <div class="header">
@@ -20,9 +20,23 @@
                     <ul>
                         <li><a href="homepage.html">Home</a></li>
                         <li><a href="AItutor.html">AI Tutor</a></li>
-                        <!--<li><a href=".html">Calender</a></li>
-                        <li><a href=".html">Flashcards</a></li> 
-                        <li><a href=".html">Logout</a></li> -->
+                        <!--<li><a href=".html">Calender</a></li>-->
+                        <li><a href="flashcards.html">Flashcards</a></li>
+
+                        <button id="logout">Logout</button>
+
+                        <script>
+                        document.getElementById("logout").addEventListener("click", async () => {
+                            try {
+                                await signOut(auth);
+                                alert("Logged Out Successfully");
+                                window.location.href = "index.html";
+                            } catch (error) {
+                                alert(error.message);
+                            }
+                        });
+                        </script>
+
                     </ul>
                 </div>
             </div>
@@ -32,11 +46,12 @@
     <div class="ai-tutor-container">
         <h2>AI Tutor</h2>
         <h2>ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧</h2>
-        <div id="chat-box"></div>
-        <input type="text" id="user-input" placeholder="Ask me anything..." />
-        <button onclick="sendMessage()">Send</button>
+
+        <p>Click the button below to chat with AI Tutor.</p>
+        <a href="https://chat.openai.com/" target="_blank">
+            <button>Open AI Tutor</button>
+        </a>
     </div>
-    
 
     <!--Footer Section-->
     <footer>
@@ -51,3 +66,5 @@
             </div>
         </div>
     </footer>
+</body>
+</html>

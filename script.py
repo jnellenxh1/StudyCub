@@ -1,20 +1,40 @@
-from flask import Flask, request, jsonify
-import os
-from dotenv import load_dotenv
+import json
+import requests
 
-# Load .env variables
-load_dotenv()
+def invoke(action, params={}):
+    request_json = {
+        "action": action,
+        "version": 6,
+        "params": params
+    }
+    response = requests.post("http://127.0.0.1:8765", json=request_json)
+    return response.json()
 
-app = Flask(__name__)
+# Example: Get a list of all decks
+print(invoke("deckNames"))
 
-# Securely provide API key (Never expose in frontend directly!)
-@app.route("/get-api-key", methods=["GET"])
-def get_api_key():
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        return jsonify({"error": "API key not found"}), 500
-    return jsonify({"api_key": api_key})
+# Example: Add a flashcard
+invoke("addNote", {
+    "note": {
+        "deckName": "Default",
+        "modelName": "Basic",
+        "fields": {
+            "Front": "What is the capital of France?",
+            "Back": "Paris"
+        },
+        "tags": ["geography"],
+        "options": {"allowDuplicate": False}
+    }
+})
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000, debug=True)
+def get_flashcards():
+    try:
+        response = invoke("findNotes", {"query": "deck:Default"})
+        if "error" in response and response["error"]:
+            print("Error:", response["error"])
+        else:
+            print("Flashcards:", response["result"])
+    except requests.exceptions.RequestException as e:
+        print("Failed to connect to Anki:", e)
 
+get_flashcards()

@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Asg1</title>
     <title>ID_StudyCub_IP</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
-
 <body class="login-page">
   <div class="container">
       <!-- Full-width Header -->
-      <div class="loginheader">
-          <div class="logo_logincontainer">
+      <div class="header">
+          <div class="logo_container">
               <img src="images/StudyCubLogo.png" alt="StudyCub Logo">
           </div>
       </div>
-
       <!-- Centered Login Form -->
       <div class="form-container">
           <h2>Login</h2>
@@ -28,17 +26,14 @@
       </div>
   </div>
 </body>
-
-
     <!-- Firebase SDK -->
     <script type="module">
         // Import Firebase
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
-
         // Firebase configuration
         const firebaseConfig = {
-            apiKey: "LOGIN_API_KEY",
+            apiKey: "AIzaSyBwzc5p4vjdfNC2OpPJrjleROUUodNi0vg",
             authDomain: "studycub-f53bf.firebaseapp.com",
             projectId: "studycub-f53bf",
             storageBucket: "studycub-f53bf.firebasestorage.app",
@@ -46,11 +41,9 @@
             appId: "1:810470383299:web:9baa26a0933e4a925d4c76",
             measurementId: "G-TP01Q33ZTX"
         };
-
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-
         // Handle Login
         document.getElementById("loginForm").addEventListener("submit", async (event) => {
             event.preventDefault();
@@ -62,13 +55,11 @@
                 console.log("User Logged In:", userCredential.user);
                 alert("Login Successful!");
                 window.location.href = "homepage.html"; 
-
             } catch (error) {
                 console.error("Login Error:", error.message);
                 alert(error.message);
             }
         });
-
         // Handle Logout
         document.getElementById("logout").addEventListener("click", async () => {
             try {
