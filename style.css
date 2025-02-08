@@ -4,12 +4,19 @@ html, body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f8f9fa;
 }
 
+/*Login Page*/
+.login-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
 /* Make the container stretch fully */
 .login-page .container {
     width: 100%;
@@ -21,7 +28,7 @@ html, body {
 }
 
 /* Header should be full width */
-.header {
+.loginheader {
     width: 100%;
     height: 120px;
     background: linear-gradient(to right, #E15E55, #FFC98B);
@@ -40,7 +47,7 @@ html, body {
     width: 350px;
 }
 
-.logo_container img {
+.logo_logincontainer img {
     max-width: 90px;
     height:auto;
 }
@@ -80,6 +87,7 @@ html, body {
 .header {
     width: 100%;
     height: 80px;
+    background:  linear-gradient(to right, #E15E55, #FFC98B);;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,4 +143,74 @@ html, body {
 .menu ul li a:hover {
     color: #fff; /* Change color on hover */
     text-decoration: underline; /* Add underline on hover */
+}
+
+/*Homepage menu styling*/
+.main_content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    width: 100%;
+    padding: 50px 20px;
+}
+
+/* Ensure the description appears above features */
+.desc_container {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 30px; /* Add space between description and features */
+}
+
+/* Features grid */
+.feature_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Set 3 columns */
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ensure responsiveness for smaller screens */
+@media screen and (max-width: 900px) {
+    .feature_grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .feature_grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for small screens */
+    }
+}
+
+
+/* Individual feature item */
+.feature_item {
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Feature images */
+.feature_item img {
+    width: 100px; /* Adjust size */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Headings inside feature items */
+.feature_item h2 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Hover effect */
+.feature_item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
