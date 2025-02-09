@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # StudyCub
 Our app, 'StudyCub', allows Secondary school students to make studying for their upcoming tests and examinations as easy as pie. With our vast variety of practice papers that ranges from every level and school, students will be able to study with ease. This app is perfect for last minute revision and even rewards students for completing practice papers with flying colours, making StudyCub the app for students.
 
@@ -45,3 +46,6 @@ We used a simple and clean, modern design so that the students are able to use t
 ## Credits
 **Content**
 - The text for the description in the Reddit Forum feature was taken from https://www.reddit.com/r/SGExams/
+=======
+
+>>>>>>> 9ea92e0736c09c7747b08935766e7144d3e400c7
