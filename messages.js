@@ -51,7 +51,7 @@ function getBotReply(userMessage) {
         return "See u bro, byebye! 🎉";
     } 
     else {
-        return "I'm just a simple bot! Try asking me something else. 🤖";
+        return "Hello??";
     }
 }
 

@@ -8,15 +8,7 @@
 </head>
 
 <body class="homepage-page">
-    <!--Header Section-->
-    <header>
-        <div class="header">
-            <div class="inner_header">
-                <div class="logo_container">
-                    <img src="images/StudyCubIcon.png" alt="StudyCub Logo">
-                </div>
-                <div class="menu">
-                    <ul>
+<!-- Header Section -->
     <header>
         <div class="header">
             <div class="inner_header">
@@ -29,29 +21,34 @@
                         <li><a href="AItutor.html">AI Tutor</a></li>
                         <li><a href="calender.html">Calendar</a></li>
                         <li><a href="flashcards.html">Flashcards</a></li>
-                        <button id="logout">Logout</button>
                     </ul>
+                    <!-- Logout button should be outside of <ul> -->
+                    <button id="logout">Logout</button>
                 </div>
             </div>
         </div>
     </header>
-                        <script>
-                        document.getElementById("logout").addEventListener("click", async () => {
-                            try {
-                                await signOut(auth);
-                                alert("Logged Out Successfully");
-                                window.location.href = "index.html";
-                            } catch (error) {
-                                alert(error.message);
-                            }
-                        });
-                        </script>
 
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Firebase and Logout Script -->
+    <script type="module">
+        // Import Firebase SDK
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        
+        // Initialize Firebase Authentication
+        const auth = getAuth();
+
+        // Logout Functionality
+        document.getElementById("logout").addEventListener("click", async () => {
+            try {
+                await signOut(auth);
+                alert("Logged Out Successfully");
+                window.location.href = "index.html";
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+
 
     <!--Description Section-->
     <div class="main_content"> 
