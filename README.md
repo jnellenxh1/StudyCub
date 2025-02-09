@@ -23,7 +23,7 @@ We used a simple and clean, modern design so that the students are able to use t
   
 ## Assistive AI
 - Firebase Login: Using ChatGPT to help me set up Firebase Authentication and figuring out how to implement it
-  - https://chatgpt.com/share/67a8b184-de88-8006-8c76-77a56840afac
+  -![image](https://github.com/user-attachments/assets/8ad106df-6974-4928-b857-149e49487882)
 
 - Flashcard Feature: Using ChatGPT to help implement my flashcard idea and bring it to life.
   -![image](https://github.com/user-attachments/assets/02a43bcb-cb0a-41b4-bb17-986ca5bdd532)
