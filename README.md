@@ -3,8 +3,8 @@ Our app, 'StudyCub', allows Secondary school students to make studying for their
 ## Design Process
 
 ## Features
-_Existing Features_
-_Features Left to Implement_
+**Existing Features**
+**Features Left to Implement**
 
 ## Technologies Used
 
@@ -13,6 +13,6 @@ _Features Left to Implement_
 ## Testing
 
 ## Credits
-_Content_
-_Media_
-_Acknowledgements_
+**Content
+Media
+Acknowledgements**
