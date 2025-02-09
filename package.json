@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase": "^11.3.0",
+    "googleapis": "^144.0.0"
+  }
+}

@@ -6,7 +6,7 @@
     <title>Flashcards</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="homepage-page">
+<body class="flashcards-page">
 
     <header>
         <div class="header">
@@ -25,9 +25,36 @@
             </div>
         </div>
     </header>
+    
+    <div class="streak-container">
+        🔥 Study Streak: <span id="streak-count">0</span> days
+    </div>
+    
+    <!-- Flashcards Section -->
+    <div class="container">
+        <div class="progress-bar"><span id="progress"></span></div>
+        <div class="card" id="flashcard">
+            <div class="card-inner">
+                <div class="card-front">
+                    <p id="question">Loading...</p>
+                </div>
+                <div class="card-back">
+                    <p id="answer">Loading...</p>
+                </div>
+            </div>
+        </div>
+        <button id="prev">← Previous</button>
+        <button id="flip">Flip</button>
+        <button id="next">Next →</button>
+    </div>
+    
+    <!-- Add New Flashcard -->
+    <div class="add-flashcard-container">
+        <input type="text" id="new-question" placeholder="Enter question">
+        <input type="text" id="new-answer" placeholder="Enter answer">
+        <button id="add-flashcard">Add Flashcard</button>
+    </div>
+    <script src="flashcards.js"></script>
 
-    <div id="flashcard-container"></div>
-
-    <script src="flashcards.js"></script> 
 </body>
 </html>

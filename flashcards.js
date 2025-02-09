@@ -1,24 +1,71 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Hardcoded flashcards (Replace or extend as needed)
-    const flashcards = [
-        { front: "What is the capital of France?", back: "Paris" },
-        { front: "What is 2 + 2?", back: "4" },
-        { front: "What is the largest planet?", back: "Jupiter" },
-        { front: "Who wrote 'Hamlet'?", back: "William Shakespeare" }
-    ];
+const flashcard = document.getElementById("flashcard");
+const question = document.getElementById("question");
+const answer = document.getElementById("answer");
+const progress = document.getElementById("progress");
 
-    const container = document.getElementById("flashcard-container");
+let flashcards = JSON.parse(localStorage.getItem("flashcards")) || [
+    { question: "What is the capital of France?", answer: "Paris" },
+    { question: "What is 2 + 2?", answer: "4" },
+    { question: "Who wrote 'To Kill a Mockingbird'?", answer: "Harper Lee" }
+];
 
-    flashcards.forEach(card => {
-        let flashcard = document.createElement("div");
-        flashcard.className = "flashcard";
-        flashcard.innerHTML = `<strong>${card.front}</strong><br><span style="display:none">${card.back}</span>`;
-        
-        flashcard.addEventListener("click", function () {
-            let answer = this.children[1];
-            answer.style.display = answer.style.display === "none" ? "block" : "none";
-        });
+let currentIndex = 0;
+let streak = localStorage.getItem("streak") || 0;
+document.getElementById("streak-count").textContent = streak;
 
-        container.appendChild(flashcard);
-    });
+// Update Flashcard
+function updateFlashcard() {
+    question.textContent = flashcards[currentIndex].question;
+    answer.textContent = flashcards[currentIndex].answer;
+    progress.style.width = ((currentIndex + 1) / flashcards.length) * 100 + "%";
+    flashcard.classList.remove("flipped");
+}
+
+// Flip Flashcard
+document.getElementById("flip").addEventListener("click", () => {
+    flashcard.classList.toggle("flipped");
 });
+
+// Navigation
+document.getElementById("next").addEventListener("click", () => {
+    if (currentIndex < flashcards.length - 1) {
+        currentIndex++;
+        updateFlashcard();
+    }
+});
+
+document.getElementById("prev").addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateFlashcard();
+    }
+});
+
+// Study Streak System
+function updateStreak() {
+    let lastStudyDate = localStorage.getItem("lastStudyDate");
+    let today = new Date().toDateString();
+
+    if (lastStudyDate !== today) {
+        streak++;
+        localStorage.setItem("streak", streak);
+        localStorage.setItem("lastStudyDate", today);
+        document.getElementById("streak-count").textContent = streak;
+    }
+}
+
+updateStreak();
+
+// Add New Flashcard
+document.getElementById("add-flashcard").addEventListener("click", () => {
+    let newQuestion = document.getElementById("new-question").value;
+    let newAnswer = document.getElementById("new-answer").value;
+
+    if (newQuestion && newAnswer) {
+        flashcards.push({ question: newQuestion, answer: newAnswer });
+        localStorage.setItem("flashcards", JSON.stringify(flashcards));
+        alert("New flashcard added!");
+    }
+});
+
+updateFlashcard();

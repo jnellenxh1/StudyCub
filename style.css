@@ -1,74 +1,127 @@
-/*Index page style*/
-/* Full page layout */
-html, body {
-    height: 100vh;
-    margin: 0;
+/*FORL LOGIN PAGE*/
+/* General Styling */
+body.login-page {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f8f9fa;
-    padding-top: 80px;
-}
-/* Make the container stretch fully */
-.login-page .container {
+    min-height: 100vh;
+  }
+  
+  /* Container for the entire page content */
+  .container {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-/* Header should be full width */
-.login-page .header {
-    width: 350px;
-    height: 120px;
-    position: relative;
-    background: linear-gradient(to right, #E15E55, #FFC98B);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/* Form container */
- .form-container {
-    background: white;
-    padding: 30px;
+    max-width: 450px; /* Set a consistent width for content */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+/* Login Page Header */
+.header.login-header {
+    background: linear-gradient(90deg, #f76454, #fbb042);
+    padding: 20px 0; /* Add consistent top and bottom padding */
     text-align: center;
-    width: 350px;
-}
-.login-page .logo_container img {
-    max-width: 100px;
-    height:auto;
-}
-/* Input fields */
-#loginForm input {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative; /* Ensure proper placement */
+  }
+  
+  .header.login-header .loginlogocontainer img {
+    max-width: 100px; /* Adjusted to balance size with header */
+    margin: 0 auto;
+    align-items: center;
+  }
+  
+  /* Main Content (Login Form + Logout Button) */
+  #mainContent {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+ 
+/* Login Form Styling */
+#loginForm {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #loginForm input {
     width: 100%;
     padding: 12px;
-    font-size: 16px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-/* Buttons */
-#loginForm button, #logout {
-    background: #E15E55;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
     margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     box-sizing: border-box;
+    font-size: 14px;
+    background-color: #f9f9f9;
+  }
+  
+  #loginForm input:focus {
+    outline: none;
+    border-color: #f76454;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(247, 100, 84, 0.2);
+  }
+  
+  /* Button Styling */
+  .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn.primary-btn {
+    background-color: #f76454;
+    color: white;
+  }
+  
+  .btn.primary-btn:hover {
+    background-color: #c54b44;
+  }
+  
+  .btn.secondary-btn {
+    background-color: #d6d6d6;
+    color: #333;
+  }
+  
+  .btn.secondary-btn:hover {
+    background-color: #bfbfbf;
+  }
+  
+/* Ensure logout button is aligned like login form */
+#logoutContainer {
+    width: 100%;
+    max-width: 400px; /* Match login form width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto 0; /* Adds spacing and centers */
+    text-align: center;
 }
-#loginForm button:hover, #logout:hover {
-    background: #c54b44;
+
+/* Ensure logout button is full width */
+#logout {
+    width: 100%;
+}
+
+
+/* FOR ALL OTHER HTML*/
+html body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
 }
 
 /* Header Section Styling */
@@ -229,7 +282,7 @@ html, body {
     position: fixed;
     position: relative;
     bottom: 0;
-    width: 1998px;
+    width: 100%;
     margin-top: auto;
     position: sticky; 
     bottom: 0;
@@ -342,3 +395,292 @@ button:hover {
 .flashcard:hover {
     background: #e0e0e0;
 }
+
+/* Messages Page Styling */
+body.messages-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Messages Container */
+.messages-container {
+    width: 90%;
+    max-width: 500px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+/* Messages Box */
+#messagesBox {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual Message */
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    max-width: 80%;
+}
+
+/* User Messages */
+.user-message {
+    background-color: #E15E55;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+    border-radius: 15px;
+    padding: 8px;
+    max-width: 60%;
+}
+
+/* Received Messages */
+.received-message {
+    background-color: #ddd;
+    color: black;
+    align-self: flex-start;
+    text-align: left;
+    border-radius: 15px;
+    padding: 8px;
+    max-width: 60%;
+}
+
+/* Message Input */
+.message-input {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.message-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.message-input button {
+    padding: 10px 15px;
+    border: none;
+    background: #E15E55;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Chat messages styling */
+.chat-message {
+    background-color: #000000;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Styling for user messages */
+  .chat-message:nth-child(odd) {
+    background-color: #e0f7fa;
+  }
+  
+/* Custom "Friend" Message Styling */
+.bot-message {
+    background-color: #dbeafe; /* Light blue */
+    color: #333;
+    align-self: flex-start;
+    text-align: left;
+    border-radius: 15px;
+    padding: 8px;
+    max-width: 60%;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+/* Flashcard Page Styling */
+/* General Page Styling */
+body.flashcards-page {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #FF9A8B, #FF6A88, #FF99AC);
+    color: #fff;
+    text-align: center;
+}
+
+/* Header Spacing */
+.header {
+    margin-bottom: 30px;
+}
+
+/* Centered Container */
+.container {
+    width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Flashcard Styling */
+/* General Page Styling */
+body.flashcards-page {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #FF9A8B, #FF6A88, #FF99AC);
+    color: #fff;
+    text-align: center;
+}
+
+/* Header Spacing */
+.header {
+    margin-bottom: 30px;
+}
+
+/* Centered Container */
+.container {
+    width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Flashcard Styling */
+.card {
+    width: 400px;
+    height: 250px;
+    perspective: 1200px;
+    margin: 20px auto;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: black;
+    padding: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #ff3b6f;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Buttons */
+button {
+    padding: 12px 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#prev, #next {
+    background: #f06292;
+    color: white;
+}
+
+#flip {
+    background: #ff4081;
+    color: white;
+}
+
+#add-flashcard {
+    background: #ff80ab;
+    color: white;
+}
+
+/* Study Streak */
+.streak-container {
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Add Flashcard Form */
+.add-flashcard-container {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+.add-flashcard-container input {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+

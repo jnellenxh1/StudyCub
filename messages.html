@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyCub Messages</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="messages.js" defer></script>
+</head>
+<body class="messages-page">
+
+    <!-- Header -->
+    <header>
+        <div class="header">
+            <div class="inner_header">
+                <div class="logo_container">
+                    <img src="images/StudyCubIcon.png" alt="StudyCub Logo">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="AItutor.html">AI Tutor</a></li>
+                        <li><a href="flashcards.html">Flashcards</a></li>
+                        <button id="logout">Logout</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Messages Section -->
+    <main class="messages-container">
+        <h2>📩 Messages</h2>
+        <button id="requestPermission" class="btn primary-btn">Enable Notifications</button>
+        
+        <div id="messagesBox">
+            <div id="messagesContainer"></div>
+        </div>
+
+        <div class="message-input">
+            <input type="text" id="messageInput" placeholder="Type your message..." />
+            <button id="sendMessage" class="btn primary-btn">Send</button>
+        </div>
+    </main>
+
+</body>
+</html>
