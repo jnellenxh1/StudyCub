@@ -42,8 +42,10 @@ We used a simple and clean, modern design so that the students are able to use t
 ## Credits
 **Content**
 - The text for the description in the Reddit Forum feature was taken from https://www.reddit.com/r/SGExams/
+
 **Media**
 - The photos used in this site were obtained from https://www.flaticon.com/
 - The link used is https://www.sgtestpapersfree.com/#
+
 **Acknowledgements**
 - API inspiration by https://firebase.google.com/docs/auth/admin#custom_user_claims
