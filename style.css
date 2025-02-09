@@ -336,7 +336,7 @@ html body {
     margin-top: 150px;
     padding: 20px;
     border-radius: 10px;
-    background: #f4f4f4;
+    background: #f4cfc7;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
@@ -411,7 +411,7 @@ body.messages-page {
 .messages-container {
     width: 90%;
     max-width: 500px;
-    background-color: white;
+    background-color: #ffbe98;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -493,18 +493,20 @@ body.messages-page {
     background-color: #000000;
     margin: 5px 0;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 14px;
+    align-self: flex-start;
+    text-align: left;
   }
   
   /* Styling for user messages */
   .chat-message:nth-child(odd) {
-    background-color: #e0f7fa;
+    background-color: #A8D299;
   }
   
 /* Custom "Friend" Message Styling */
 .bot-message {
-    background-color: #dbeafe; /* Light blue */
+    background-color: #dbeafe; 
     color: #333;
     align-self: flex-start;
     text-align: left;
@@ -520,7 +522,7 @@ body.messages-page {
 /* General Page Styling */
 body.flashcards-page {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #FF9A8B, #FF6A88, #FF99AC);
+    background: linear-gradient(to right, #f4cfc7, #ffbe78, #ffbe78);
     color: #fff;
     text-align: center;
 }
@@ -545,7 +547,7 @@ body.flashcards-page {
 /* General Page Styling */
 body.flashcards-page {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #FF9A8B, #FF6A88, #FF99AC);
+    background: linear-gradient(to right, #ffffff, #ffbe98, #FF99AC);
     color: #fff;
     text-align: center;
 }
@@ -641,17 +643,17 @@ button:hover {
 }
 
 #prev, #next {
-    background: #f06292;
+    background: #ffc98b;
     color: white;
 }
 
 #flip {
-    background: #ff4081;
+    background: #ffc98b;
     color: white;
 }
 
 #add-flashcard {
-    background: #ff80ab;
+    background: #ffc98b;
     color: white;
 }
 
@@ -690,7 +692,7 @@ button:hover {
     max-width: 600px;
     margin: 20px auto;
     margin-top: 150px;
-    background: white;
+    background: #e79796;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -711,7 +713,7 @@ button:hover {
 
 .day {
     padding: 15px;
-    background: #e0e0e0;
+    background: #f4cfc7;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
@@ -724,7 +726,7 @@ button:hover {
 .event {
     font-size: 12px;
     color: white;
-    background: #ff5733;
+    background: #A8D299;
     padding: 3px;
     border-radius: 3px;
     margin-top: 5px;
@@ -754,4 +756,55 @@ button:hover {
     cursor: pointer;
     float: right;
     font-size: 24px;
+}
+
+#reddit-feed {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 150px;
+    border: 5px #000;
+}
+
+.post {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post h3 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.post a {
+    text-decoration: none;
+    color: #0079d3;
+}
+
+.post p {
+    font-size: 14px;
+    color: #555;
+}
+
+.reddit-page h1 {
+    font-size: 24px;
+    margin: 10px 0;
+    align-items: center;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.post img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+}   
+
+.reddit-page p {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin-top: 3px;
 }
