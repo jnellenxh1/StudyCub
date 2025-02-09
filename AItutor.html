@@ -20,23 +20,9 @@
                     <ul>
                         <li><a href="homepage.html">Home</a></li>
                         <li><a href="AItutor.html">AI Tutor</a></li>
-                        <!--<li><a href=".html">Calender</a></li>-->
+                        <li><a href="calender.html">Calendar</a></li>
                         <li><a href="flashcards.html">Flashcards</a></li>
-
                         <button id="logout">Logout</button>
-
-                        <script>
-                        document.getElementById("logout").addEventListener("click", async () => {
-                            try {
-                                await signOut(auth);
-                                alert("Logged Out Successfully");
-                                window.location.href = "index.html";
-                            } catch (error) {
-                                alert(error.message);
-                            }
-                        });
-                        </script>
-
                     </ul>
                 </div>
             </div>
